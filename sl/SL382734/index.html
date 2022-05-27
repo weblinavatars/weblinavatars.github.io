@@ -1,0 +1,434 @@
+<html>
+    <head>
+        <title>SL 382734 - Animations</title>
+        <style>
+            html {
+                font-family: sans-serif;
+                font-size: 11px;
+                background: #CCCCCC;
+            }
+            body {
+                font-size: 11px;
+                margin: 1rem;
+            }
+            body > * {
+                font-size: 1rem;
+            }
+            body > h1 {
+                font-size: 2rem;
+            }
+            body > br {
+                display: block;
+                height: 1rem;
+                content: "";
+            }
+
+            .animations {
+                position: relative;
+                margin-top: 1rem;
+            }
+            .animations > .label {
+                position: absolute;
+                top: 0.75rem;
+                left: 0.25rem;
+                transform: rotate(180deg);
+                writing-mode: vertical-lr;
+                letter-spacing: 1px;
+                font-size: 19px;
+            }
+            .animations > .items {
+                display: flex;
+                padding: 3.5rem 4rem 4rem;
+                flex-flow: row wrap;
+                gap: 1.5rem 1.5rem;
+            }
+            .animations > .items > div {
+                text-align: center;
+            }
+            .animations > .items > div > div {
+                margin-bottom: 0.5rem;
+            }
+
+            .optionLabel {
+                display: inline-block;
+                width: 6rem;
+            }
+            input[type=radio] {
+                display: none;
+            }
+            label {
+                display: inline-block;
+                padding: 0.5rem;
+                border: 2px solid;
+                border-color: #FFFFFF #000000 #000000 #FFFFFF;
+            }
+            input[type=radio]:checked + label {
+                border-color: #000000 #FFFFFF #FFFFFF #000000;
+            }
+
+            button {
+                display: inline-block;
+                padding: 0.5rem;
+                border: 2px solid;
+                border-color: #FFFFFF #000000 #000000 #FFFFFF;
+                background: transparent;
+            }
+            button:focus {
+                outline: 2px solid rgb(177, 255, 50);
+            }
+            button[disabled] {
+                border-color: rgb(50%, 50%, 50%);
+                color: rgb(40%, 40%, 40%);
+            }
+            button:not([disabled]):active {
+                border-color: #000000 #FFFFFF #FFFFFF #000000;
+            }
+            @keyframes flash {
+                0% {background: transparent;}
+                50% {background: rgb(177, 255, 50);}
+                100% {background: transparent;}
+            }
+            button.flash {
+                animation: flash 0.2s 5;
+            }
+
+            #borderMagenta:checked ~ .animations > .items > div > div {
+                outline: 0.25rem solid #FF00FF;
+            }
+            label[for=borderMagenta] {
+                text-decoration: underline 0.25rem solid #FF00FF;
+            }
+
+            #glowWeblin:checked ~ .animations > .items > div > div > img {
+                filter: drop-shadow(1px 1px 2px #707070);
+            }
+            #glowWeblin:checked ~ .animations > .items > div > div > img:hover {
+                filter: drop-shadow(1px 2px 3px #505050);
+            }
+            #glowWeblinTarget:checked ~ .animations > .items > div > div > img {
+                filter: drop-shadow(1px 1px 2px #707070);
+            }
+            #glowWeblinTarget:checked ~ .animations > .items > div > div > img:hover {
+                filter: drop-shadow(1px 2px 3px #505050) drop-shadow(0px 0px 6px #ABC115);
+            }
+            label[for=glowWeblin] span {
+                filter: drop-shadow(1px 1px 2px #707070);
+            }
+            label[for=glowWeblin]:hover span {
+                filter: drop-shadow(1px 2px 3px #505050);
+            }
+            label[for=glowWeblinTarget] span {
+                filter: drop-shadow(1px 1px 2px #707070);
+            }
+            label[for=glowWeblinTarget]:hover span {
+                filter: drop-shadow(1px 2px 3px #505050) drop-shadow(0px 0px 6px #ABC115);
+            }
+
+            #size100x100:checked ~ .animations > .items > div > div > img {
+                height: 100px;
+                width: 100px;
+            }
+            #size200x200:checked ~ .animations > .items > div > div > img {
+                height: 200px;
+                width: 200px;
+            }
+            #size300x300:checked ~ .animations > .items > div > div > img {
+                height: 300px;
+                width: 300px;
+            }
+            #size400x400:checked ~ .animations > .items > div > div > img {
+                height: 400px;
+                width: 400px;
+            }
+
+            #colorWhite, label[for=colorWhite],
+            #colorWhite:checked ~ .animations {
+                background: #FFFFFF;
+                color: #000000;
+            }
+            #colorWhitesmoke, label[for=colorWhitesmoke],
+            #colorWhitesmoke:checked ~ .animations {
+                background: #F5F5F5;
+                color: #000000;
+            }
+            #colorGray75, label[for=colorGray75],
+            #colorGray75:checked ~ .animations {
+                background: rgb(75%, 75%, 75%);
+                color: #000000;
+            }
+            #colorGray50, label[for=colorGray50],
+            #colorGray50:checked ~ .animations {
+                background: rgb(50%, 50%, 50%);
+                color: #FFFFFF;
+            }
+            #colorGray25, label[for=colorGray25],
+            #colorGray25:checked ~ .animations {
+                background: rgb(25%, 25%, 25%);
+                color: #FFFFFF;
+            }
+            #colorBlack, label[for=colorBlack],
+            #colorBlack:checked ~ .animations {
+                background: #000000;
+                color: #FFFFFF;
+            }
+        </style>
+        <script>(() => {
+
+            class AvatarActivator {
+
+                msgIdNext = 1;
+                msgResponseHandlers = {};
+
+                constructor() {}
+
+                init() {
+                    window.addEventListener('message', (e) => this.onMsgResponse(e));
+                    if (document.readyState !== "loading") {
+                        this.onDocReady();
+                    } else {
+                        document.addEventListener("DOMContentLoaded", () => this.onDocReady());
+                    }
+                }
+
+                onDocReady() {
+                    if (window.location.protocol.startsWith('http')) {
+                        (async () => {
+                            for (let i = 0; i < 10; i++) {
+                                try {
+                                    await this.askWeblinExtension({
+                                        type: 'Client.GetApi',
+                                    }, 500);
+                                    this.onWeblinReady();
+                                    return;
+                                } catch (error) {
+                                    console.log({error: error});
+                                }
+                            }
+                            this.getAvatarBtn().innerText = 'Weblin Client not found!';
+                        })().catch(error => {});
+                    } else {
+                        this.getAvatarBtn().innerText = 'Page is loaded offline!';
+                    }
+                }
+
+                onWeblinReady() {
+                    let btn = this.getAvatarBtn();
+                    btn.innerText = 'Set as Weblin avatar...';
+                    btn.removeAttribute('disabled');
+                    btn.classList.add('flash');
+                    btn.onclick = () => this.onAvatarBtn();
+                }
+
+                onAvatarBtn() {
+
+                    (async () => {
+                        let baseUrl = this.getBaseUrl();
+                        await this.askWeblinExtension({
+                            type: 'Client.CreateAvatar',
+                            provider: 'n3q',
+                            auth: 'SCb6Plsm2bpJYNB23W1q',
+                            template: 'Avatar',
+                            label: 'SL 382734',
+                            imageUrl: baseUrl + '/idle.gif',
+                            width: 94,
+                            height: 94,
+                            avatarAnimationsUrl: baseUrl + '/config.xml',
+                        });
+                        // Success message is displayed by Weblin.
+                    })().catch(error => {
+                        console.log({error: error});
+                        // Error is displayed by Weblin.
+                    });
+                }
+
+                async askWeblinExtension(msg, timeout=5000) {
+                    return new Promise((resolve, reject) => {
+                        msg.id = '' + (this.msgIdNext++);
+                        msg.mode = 'page';
+                        msg.x7ft76zst7g_pageApi = true;
+                        this.msgResponseHandlers[msg.id] = (response) => {
+                            if (response.ok) {
+                                resolve(response);
+                            } else {
+                                let error = new Error('Msg processing failed!');
+                                error.msg = msg;
+                                error.response = response;
+                                reject(error);
+                            }
+                        };
+                        window.setTimeout(() => this.onMsgTimeout(msg.id, timeout), timeout);
+                        window.postMessage(msg, '*');
+                    });
+                }
+
+                onMsgTimeout(msgId, timeout) {
+                    let handler = this.msgResponseHandlers[msgId] ?? null;
+                    if (handler) {
+                        delete this.msgResponseHandlers[msgId];
+                        handler({
+                            ok: false,
+                            errorMsg: 'Page-side timeout while waiting for response!',
+                            timeout: timeout,
+                        });
+                    }
+                }
+
+                onMsgResponse(e) {
+                    let response = e.data;
+                    let msgId = '' + response.id;
+                    let handler = this.msgResponseHandlers[msgId] ?? null;
+                    if (handler && response.df7d86ozgh76_2pageApi) {
+                        delete this.msgResponseHandlers[msgId];
+                        console.log({response: response});
+                        handler(response);
+                    }
+                }
+
+                getAvatarBtn() {
+                    return document.getElementById('setAsAvatarBtn');
+                }
+
+                getBaseUrl() {
+                    let fullUrl = window.location.href;
+                    let parts = fullUrl.match(/^([^?#]+)\/[^/]*([?#]|$)/i);
+                    let baseUrl = parts[1];
+                    return baseUrl;
+                }
+
+            }
+
+            new AvatarActivator().init();
+        })();</script>
+    </head>
+    <body>
+        <h1>SL 382734 - Animations</h1>
+        <span class="optionLabel">Border:</span>
+        <input type="radio" name="border" id="borderNone" checked/>
+        <label for="borderNone">None</label>
+        <input type="radio" name="border" id="borderMagenta"/>
+        <label for="borderMagenta">Magenta</label>
+        <br>
+        <span class="optionLabel">Glow:</span>
+        <input type="radio" name="glow" id="glowNone"/>
+        <label for="glowNone">None</label>
+        <input type="radio" name="glow" id="glowWeblin" checked/>
+        <label for="glowWeblin"><span>Weblin</span></label>
+        <input type="radio" name="glow" id="glowWeblinTarget"/>
+        <label for="glowWeblinTarget"><span>Weblin Drop Target</span></label>
+        <br>
+        <span class="optionLabel">Size:</span>
+        <input type="radio" name="size" id="size100x100"/>
+        <label for="size100x100">100x100</label>
+        <input type="radio" name="size" id="size200x200" checked/>
+        <label for="size200x200">200x200</label>
+        <input type="radio" name="size" id="size300x300"/>
+        <label for="size300x300">300x300</label>
+        <input type="radio" name="size" id="size400x400"/>
+        <label for="size400x400">400x400</label>
+        <br>
+        <span class="optionLabel">Background:</span>
+        <input type="radio" name="color" id="colorWhite"/>
+        <label for="colorWhite">White</label>
+        <input type="radio" name="color" id="colorWhitesmoke" checked/>
+        <label for="colorWhitesmoke">Whitesmoke</label>
+        <input type="radio" name="color" id="colorGray75"/>
+        <label for="colorGray75">75% Gray</label>
+        <input type="radio" name="color" id="colorGray50"/>
+        <label for="colorGray50">50% Gray</label>
+        <input type="radio" name="color" id="colorGray25"/>
+        <label for="colorGray25">25% Gray</label>
+        <input type="radio" name="color" id="colorBlack"/>
+        <label for="colorBlack">Black</label>
+        <br>
+        <span class="optionLabel">Avatar:</span>
+        <button id="setAsAvatarBtn" disabled>Detecting Weblin extension...</button>
+        <div class="animations">
+            <div class="label">idle</div>
+            <div class="items">
+                <div><div><img src="idle.gif"/></div>idle.gif</div>
+                <div><div><img src="idle-hands.gif"/></div>idle-hands.gif</div>
+                <div><div><img src="idle-lookleft.gif"/></div>idle-lookleft.gif</div>
+                <div><div><img src="idle-lookright.gif"/></div>idle-lookright.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">chat</div>
+            <div class="items">
+                <div><div><img src="chat.gif"/></div>chat.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">agree</div>
+            <div class="items">
+                <div><div><img src="agree.gif"/></div>agree.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">angry</div>
+            <div class="items">
+                <div><div><img src="angry.gif"/></div>angry.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">cheer</div>
+            <div class="items">
+                <div><div><img src="cheer.gif"/></div>cheer.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">clap</div>
+            <div class="items">
+                <div><div><img src="clap.gif"/></div>clap.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">dance</div>
+            <div class="items">
+                <div><div><img src="dance.gif"/></div>dance.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">deny</div>
+            <div class="items">
+                <div><div><img src="deny.gif"/></div>deny.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">kiss</div>
+            <div class="items">
+                <div><div><img src="kiss.gif"/></div>kiss.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">laugh</div>
+            <div class="items">
+                <div><div><img src="laugh.gif"/></div>laugh.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">wave</div>
+            <div class="items">
+                <div><div><img src="wave.gif"/></div>wave.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">yawn</div>
+            <div class="items">
+                <div><div><img src="yawn.gif"/></div>yawn.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">moveleft</div>
+            <div class="items">
+                <div><div><img src="moveleft.gif"/></div>moveleft.gif</div>
+            </div>
+        </div>
+        <div class="animations">
+            <div class="label">moveright</div>
+            <div class="items">
+                <div><div><img src="moveright.gif"/></div>moveright.gif</div>
+            </div>
+        </div>
+
+    </body>
+</html>

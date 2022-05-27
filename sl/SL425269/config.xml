@@ -1,0 +1,23 @@
+<config xmlns='http://schema.bluehands.de/character-config' version='1.0'>
+        <param name='name' value='SL 425269'/>
+        <param name='width' value='100'/>
+        <param name='height' value='100'/>
+        <param name='defaultsequence' value='idle'/>
+        <sequence group="idle" name="idle.gif" type="status" probability="1000" in="standard" out="standard"><animation src="idle.gif"/></sequence>
+<sequence group="idle" name="idle-hands.gif" type="status" probability="5" in="standard" out="standard"><animation src="idle-hands.gif"/></sequence>
+<sequence group="idle" name="idle-lookleft.gif" type="status" probability="5" in="standard" out="standard"><animation src="idle-lookleft.gif"/></sequence>
+<sequence group="idle" name="idle-lookright.gif" type="status" probability="5" in="standard" out="standard"><animation src="idle-lookright.gif"/></sequence>
+<sequence group="chat" name="chat.gif" type="basic" probability="1000" in="standard" out="standard"><animation src="chat.gif"/></sequence>
+<sequence group="agree" name="agree.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="agree.gif"/></sequence>
+<sequence group="angry" name="angry.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="angry.gif"/></sequence>
+<sequence group="cheer" name="cheer.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="cheer.gif"/></sequence>
+<sequence group="clap" name="clap.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="clap.gif"/></sequence>
+<sequence group="dance" name="dance.gif" type="emote" probability="500" in="standard" out="standard"><animation src="dance.gif"/></sequence>
+<sequence group="deny" name="deny.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="deny.gif"/></sequence>
+<sequence group="kiss" name="kiss.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="kiss.gif"/></sequence>
+<sequence group="laugh" name="laugh.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="laugh.gif"/></sequence>
+<sequence group="wave" name="wave.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="wave.gif"/></sequence>
+<sequence group="yawn" name="yawn.gif" type="emote" probability="1000" in="standard" out="standard"><animation src="yawn.gif"/></sequence>
+<sequence group="moveleft" name="moveleft.gif" type="basic" probability="1000" in="moveleft" out="moveleft"><animation src="moveleft.gif" dx="-55"/></sequence>
+<sequence group="moveright" name="moveright.gif" type="basic" probability="1000" in="moveright" out="moveright"><animation src="moveright.gif" dx="55"/></sequence>
+    </config>

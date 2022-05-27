@@ -1,0 +1,241 @@
+{
+    "avatarId": "SL410535",
+    "avatarName": "SL 410535",
+    "avatarSize": 100,
+    "animationsGenerated": {
+        "idle": {
+            "idle": {
+                "enabled": true,
+                "isLoop": true,
+                "probability": 1000,
+                "finalFileName": "idle.gif",
+                "packedFileName": "410517.gif",
+                "uploadId": 410517,
+                "uploadTime": "20081209194504",
+                "uploadUserId": 1613397,
+                "uploadSize": 3183,
+                "uploadUrl": "http://files.zweitgeist.com/5a/f0/6b/1208e2291679dbce1322051eb8bc0a8fd0.gif"
+            },
+            "hands": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 5,
+                "finalFileName": "idle-hands.gif",
+                "packedFileName": "410518.gif",
+                "uploadId": 410518,
+                "uploadTime": "20081209194506",
+                "uploadUserId": 1613397,
+                "uploadSize": 40131,
+                "uploadUrl": "http://files.zweitgeist.com/ff/d1/ba/d1ba2f552e297731fb10e0e0e44f1f79e3.gif"
+            },
+            "lookleft": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 5,
+                "finalFileName": "idle-lookleft.gif",
+                "packedFileName": "410519.gif",
+                "uploadId": 410519,
+                "uploadTime": "20081209194508",
+                "uploadUserId": 1613397,
+                "uploadSize": 35614,
+                "uploadUrl": "http://files.zweitgeist.com/20/db/84/40e4f8062b84445c1b369e6ebd962c5875.gif"
+            },
+            "lookright": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 5,
+                "finalFileName": "idle-lookright.gif",
+                "packedFileName": "410520.gif",
+                "uploadId": 410520,
+                "uploadTime": "20081209194510",
+                "uploadUserId": 1613397,
+                "uploadSize": 38512,
+                "uploadUrl": "http://files.zweitgeist.com/c5/b8/a7/e96c4f2f8bc7e0937440c6e4edbd9f80d2.gif"
+            }
+        },
+        "chat": {
+            "chat": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "chat.gif",
+                "packedFileName": "410522.gif",
+                "uploadId": 410522,
+                "uploadTime": "20081209194513",
+                "uploadUserId": 1613397,
+                "uploadSize": 56200,
+                "uploadUrl": "http://files.zweitgeist.com/ca/56/82/e647e8a1c4b7139164b2a23a475c20a479.gif"
+            }
+        },
+        "agree": {
+            "agree": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "agree.gif",
+                "packedFileName": "410524.gif",
+                "uploadId": 410524,
+                "uploadTime": "20081209194518",
+                "uploadUserId": 1613397,
+                "uploadSize": 49973,
+                "uploadUrl": "http://files.zweitgeist.com/c1/77/06/1e9b8982c08762a4fd68acf6cda252c0ed.gif"
+            }
+        },
+        "angry": {
+            "angry": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "angry.gif",
+                "packedFileName": "410525.gif",
+                "uploadId": 410525,
+                "uploadTime": "20081209194520",
+                "uploadUserId": 1613397,
+                "uploadSize": 34202,
+                "uploadUrl": "http://files.zweitgeist.com/f3/e5/f3/3cc646d2313e76c8bc02d5afccc99de772.gif"
+            }
+        },
+        "cheer": {
+            "cheer": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "cheer.gif",
+                "packedFileName": "410526.gif",
+                "uploadId": 410526,
+                "uploadTime": "20081209194521",
+                "uploadUserId": 1613397,
+                "uploadSize": 53361,
+                "uploadUrl": "http://files.zweitgeist.com/07/ef/e9/502cb8ae9e281022165b3b1e0867abbcc1.gif"
+            }
+        },
+        "clap": {
+            "clap": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "clap.gif",
+                "packedFileName": "410527.gif",
+                "uploadId": 410527,
+                "uploadTime": "20081209194525",
+                "uploadUserId": 1613397,
+                "uploadSize": 36911,
+                "uploadUrl": "http://files.zweitgeist.com/3a/07/b0/ff5cc0fa93926f492875c1ed3459daaa25.gif"
+            }
+        },
+        "dance": {
+            "dance": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 500,
+                "finalFileName": "dance.gif",
+                "packedFileName": "410528.gif",
+                "uploadId": 410528,
+                "uploadTime": "20081209194527",
+                "uploadUserId": 1613397,
+                "uploadSize": 64985,
+                "uploadUrl": "http://files.zweitgeist.com/82/e1/2f/ca01136ef13664cebe282d0c7a365baf25.gif"
+            }
+        },
+        "deny": {
+            "deny": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "deny.gif",
+                "packedFileName": "410529.gif",
+                "uploadId": 410529,
+                "uploadTime": "20081209194529",
+                "uploadUserId": 1613397,
+                "uploadSize": 64811,
+                "uploadUrl": "http://files.zweitgeist.com/f1/cf/0e/bf6c27631fdccc0f4211ff49db83741bae.gif"
+            }
+        },
+        "kiss": {
+            "kiss": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "kiss.gif",
+                "packedFileName": "410530.gif",
+                "uploadId": 410530,
+                "uploadTime": "20081209194531",
+                "uploadUserId": 1613397,
+                "uploadSize": 35076,
+                "uploadUrl": "http://files.zweitgeist.com/09/17/6d/2bdb14eaed97ad515f3c237784e1f9f0a1.gif"
+            }
+        },
+        "laugh": {
+            "laugh": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "laugh.gif",
+                "packedFileName": "410531.gif",
+                "uploadId": 410531,
+                "uploadTime": "20081209194533",
+                "uploadUserId": 1613397,
+                "uploadSize": 56122,
+                "uploadUrl": "http://files.zweitgeist.com/03/08/a0/5bccb5d4c6131d11fd2092105576a6f477.gif"
+            }
+        },
+        "wave": {
+            "wave": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "wave.gif",
+                "packedFileName": "410532.gif",
+                "uploadId": 410532,
+                "uploadTime": "20081209194535",
+                "uploadUserId": 1613397,
+                "uploadSize": 51162,
+                "uploadUrl": "http://files.zweitgeist.com/3e/74/b8/6e77a2ad4828f2c72d6a89889c51803340.gif"
+            }
+        },
+        "yawn": {
+            "yawn": {
+                "enabled": true,
+                "isLoop": false,
+                "probability": 1000,
+                "finalFileName": "yawn.gif",
+                "packedFileName": "410533.gif",
+                "uploadId": 410533,
+                "uploadTime": "20081209194537",
+                "uploadUserId": 1613397,
+                "uploadSize": 69346,
+                "uploadUrl": "http://files.zweitgeist.com/e0/0d/b4/a4eeea1ed369c8901c189ac92be0f76861.gif"
+            }
+        },
+        "moveleft": {
+            "moveleft": {
+                "enabled": true,
+                "isLoop": true,
+                "probability": 1000,
+                "walkSpeed": 55,
+                "finalFileName": "moveleft.gif",
+                "packedFileName": "410534.gif",
+                "uploadId": 410534,
+                "uploadTime": "20081209194539",
+                "uploadUserId": 1613397,
+                "uploadSize": 38838,
+                "uploadUrl": "http://files.zweitgeist.com/59/1d/5c/f478f55e8779dfae7c6c1d2594766522ba.gif"
+            }
+        },
+        "moveright": {
+            "moveright": {
+                "enabled": true,
+                "isLoop": true,
+                "probability": 1000,
+                "walkSpeed": 55,
+                "finalFileName": "moveright.gif",
+                "packedFileName": "410535.gif",
+                "uploadId": 410535,
+                "uploadTime": "20081209194542",
+                "uploadUserId": 1613397,
+                "uploadSize": 43536,
+                "uploadUrl": "http://files.zweitgeist.com/8b/ac/c0/e25e20e032f67c725523f1ebdb93ded35a.gif"
+            }
+        }
+    }
+}
