@@ -1,0 +1,688 @@
+{
+    "avatarId": "SWG-Willi-Model-220921 - Cleaned",
+    "units": {
+        "lengthUnit": "METERS",
+        "lengthScale": 1
+    },
+    "avatarTagDetectionRules": [
+        {
+            "enabled": false,
+            "tag": "MaleBody",
+            "conditions": [
+                {
+                    "type": "hasBone",
+                    "nameRegExp": "^LeftShoulder$",
+                    "hasValues": [
+                        {
+                            "valuePath": "length",
+                            "min": 9.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "enabled": false,
+            "tag": "FemaleBody",
+            "conditions": [
+                {
+                    "type": "hasTag",
+                    "tag": "MaleBody",
+                    "negate": true
+                }
+            ]
+        }
+    ],
+    "modelParts": [
+        {
+            "glob": "*.blend",
+            "category": "body",
+            "importSettings": {
+                "objectsToImport": [
+                    {
+                        "objectCollection": "collections",
+                        "nameRegExp": "^[^_]+$"
+                    }
+                ]
+            }
+        }
+    ],
+    "meshShaderName": null,
+    "worldShaderName": "world shader.blend/World Shader",
+    "materialValueOverrides": {
+        "World": {
+            "Base Ambient Color": [
+                1.0,
+                0.993,
+                0.98
+            ]
+        }
+    },
+    "camera": {
+        "location": [
+            0.0,
+            -2.0,
+            1.14
+        ],
+        "scale": 2.28
+    },
+    "lights": {
+        "Light Key": {
+            "type": "SUN",
+            "location": [
+                1.0,
+                -1.0,
+                2.0
+            ],
+            "rotation": [
+                37.5,
+                19.0,
+                28.6
+            ],
+            "color": [
+                1.0,
+                0.86,
+                0.65
+            ],
+            "energy": 5.0
+        }
+    },
+    "avatarPackQualityF": 0.95,
+    "animationDefaults": {
+        "actionAlterationBlocklists": [
+            "default"
+        ],
+        "groupName": "",
+        "groupAniName": "",
+        "aniType": "",
+        "nameFull": "",
+        "sourceNames": [],
+        "finalFileName": "",
+        "packedFileName": "",
+        "renderDirName": "",
+        "renderFileNamePrefix": "",
+        "enabled": true,
+        "preferred": false,
+        "isLoop": false,
+        "probability": 1000,
+        "avatarRotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "walkSpeed": 125,
+        "renderFileNameExt": ".png",
+        "basePackQualityF": 1.0,
+        "originalFps": 30.0,
+        "targetFps": 15.0
+    },
+    "animationTypes": {
+        "idleLoops": {
+            "animationsMax": 1,
+            "animations": []
+        },
+        "dance": {
+            "animationsMax": 1,
+            "animations": []
+        }
+    },
+    "avatarName": "SWG Willi 220921",
+    "avatarSize": 200,
+    "avatarTags": [],
+    "avatarTagDetectionRulesProcessed": [
+        0,
+        1
+    ],
+    "itemProperties": {
+        "width": 96,
+        "height": 96
+    },
+    "verticesToDelete": [],
+    "materialTextureOverrides": {},
+    "poseOverrides": {},
+    "animationBasePackQualityFDefault": 1.0,
+    "animationsGenerated": {
+        "idle": {
+            "idle": {
+                "enabled": true,
+                "sourceNames": [
+                    "animations.blend/Idle_still"
+                ],
+                "probability": 1000,
+                "basePackQualityF": 1,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "idle",
+                "groupAniName": "idle",
+                "aniType": "idle",
+                "nameFull": "idle",
+                "finalFileName": "idle.webp",
+                "packedFileName": "idle.webp",
+                "renderDirName": "idle",
+                "renderFileNamePrefix": "idle-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95,
+                "fpsFactor": 2.0,
+                "sourceFrames": 1,
+                "targetFrames": 1,
+                "duration": 0.067,
+                "actions": [
+                    {
+                        "name": "Idle_still",
+                        "sourceFrames": 1
+                    }
+                ],
+                "packedFileSize": 5170
+            }
+        },
+        "moveleft": {
+            "moveleft": {
+                "enabled": true,
+                "isLoop": true,
+                "sourceNames": [
+                    "animations.blend/Walk"
+                ],
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    -90.0
+                ],
+                "walkSpeed": 125,
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "moveleft",
+                "groupAniName": "moveleft",
+                "aniType": "moveleft",
+                "nameFull": "moveleft",
+                "finalFileName": "moveleft.webp",
+                "packedFileName": "moveleft.webp",
+                "renderDirName": "moveleft",
+                "renderFileNamePrefix": "moveleft-",
+                "preferred": false,
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95,
+                "fpsFactor": 2.0,
+                "sourceFrames": 29,
+                "targetFrames": 15,
+                "duration": 1.0,
+                "actions": [
+                    {
+                        "name": "Walk",
+                        "sourceFrames": 29
+                    }
+                ],
+                "packedFileSize": 73878
+            }
+        },
+        "moveright": {
+            "moveright": {
+                "enabled": true,
+                "isLoop": true,
+                "sourceNames": [
+                    "animations.blend/Walk"
+                ],
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    90.0
+                ],
+                "walkSpeed": 125,
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "moveright",
+                "groupAniName": "moveright",
+                "aniType": "moveright",
+                "nameFull": "moveright",
+                "finalFileName": "moveright.webp",
+                "packedFileName": "moveright.webp",
+                "renderDirName": "moveright",
+                "renderFileNamePrefix": "moveright-",
+                "preferred": false,
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95,
+                "fpsFactor": 2.0,
+                "sourceFrames": 29,
+                "targetFrames": 15,
+                "duration": 1.0,
+                "actions": [
+                    {
+                        "name": "Walk",
+                        "sourceFrames": 29
+                    }
+                ],
+                "packedFileSize": 74924
+            }
+        },
+        "chat": {
+            "hands": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Chat"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "chat",
+                "groupAniName": "hands",
+                "aniType": "chat",
+                "nameFull": "chat-hands",
+                "finalFileName": "chat-hands.webp",
+                "packedFileName": "chat-hands.webp",
+                "renderDirName": "chat-hands",
+                "renderFileNamePrefix": "chat-hands-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95
+            }
+        },
+        "wave": {
+            "wave": {
+                "enabled": true,
+                "sourceNames": [
+                    "animations.blend/Wave_start",
+                    "animations.blend/Wave_loop",
+                    "animations.blend/Wave_loop",
+                    "animations.blend/Wave_end"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "wave",
+                "groupAniName": "wave",
+                "aniType": "wave",
+                "nameFull": "wave",
+                "finalFileName": "wave.webp",
+                "packedFileName": "wave.webp",
+                "renderDirName": "wave",
+                "renderFileNamePrefix": "wave-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95,
+                "fpsFactor": 2.0,
+                "sourceFrames": 96,
+                "targetFrames": 48,
+                "duration": 3.2,
+                "actions": [
+                    {
+                        "name": "Wave_start",
+                        "sourceFrames": 15
+                    },
+                    {
+                        "name": "Wave_loop",
+                        "sourceFrames": 25
+                    },
+                    {
+                        "name": "Wave_loop",
+                        "sourceFrames": 25
+                    },
+                    {
+                        "name": "Wave_end",
+                        "sourceFrames": 31
+                    }
+                ],
+                "packedFileSize": 258602
+            }
+        },
+        "kiss": {
+            "kiss": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Kiss"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "kiss",
+                "groupAniName": "kiss",
+                "aniType": "kiss",
+                "nameFull": "kiss",
+                "finalFileName": "kiss.webp",
+                "packedFileName": "kiss.webp",
+                "renderDirName": "kiss",
+                "renderFileNamePrefix": "kiss-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95
+            }
+        },
+        "yawn": {
+            "yawn": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Yawn"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "yawn",
+                "groupAniName": "yawn",
+                "aniType": "yawn",
+                "nameFull": "yawn",
+                "finalFileName": "yawn.webp",
+                "packedFileName": "yawn.webp",
+                "renderDirName": "yawn",
+                "renderFileNamePrefix": "yawn-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95
+            }
+        },
+        "dance": {
+            "dance": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Dance"
+                ],
+                "basePackQualityF": 0.65,
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "dance",
+                "groupAniName": "dance",
+                "aniType": "dance",
+                "nameFull": "dance",
+                "finalFileName": "dance.webp",
+                "packedFileName": "dance.webp",
+                "renderDirName": "dance",
+                "renderFileNamePrefix": "dance-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.6174999999999999
+            }
+        },
+        "cheer": {
+            "cheer": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Cheer"
+                ],
+                "basePackQualityF": 0.9,
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "cheer",
+                "groupAniName": "cheer",
+                "aniType": "cheer",
+                "nameFull": "cheer",
+                "finalFileName": "cheer.webp",
+                "packedFileName": "cheer.webp",
+                "renderDirName": "cheer",
+                "renderFileNamePrefix": "cheer-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.855
+            }
+        },
+        "laugh": {
+            "laugh": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Laugh"
+                ],
+                "basePackQualityF": 0.9,
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "laugh",
+                "groupAniName": "laugh",
+                "aniType": "laugh",
+                "nameFull": "laugh",
+                "finalFileName": "laugh.webp",
+                "packedFileName": "laugh.webp",
+                "renderDirName": "laugh",
+                "renderFileNamePrefix": "laugh-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.855
+            }
+        },
+        "deny": {
+            "deny": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Deny"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "deny",
+                "groupAniName": "deny",
+                "aniType": "deny",
+                "nameFull": "deny",
+                "finalFileName": "deny.webp",
+                "packedFileName": "deny.webp",
+                "renderDirName": "deny",
+                "renderFileNamePrefix": "deny-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95
+            }
+        },
+        "agree": {
+            "agree": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Agree"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "agree",
+                "groupAniName": "agree",
+                "aniType": "agree",
+                "nameFull": "agree",
+                "finalFileName": "agree.webp",
+                "packedFileName": "agree.webp",
+                "renderDirName": "agree",
+                "renderFileNamePrefix": "agree-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95
+            }
+        },
+        "angry": {
+            "angry": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Angry"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "angry",
+                "groupAniName": "angry",
+                "aniType": "angry",
+                "nameFull": "angry",
+                "finalFileName": "angry.webp",
+                "packedFileName": "angry.webp",
+                "renderDirName": "angry",
+                "renderFileNamePrefix": "angry-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95
+            }
+        },
+        "cry": {
+            "cry": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Cry"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "cry",
+                "groupAniName": "cry",
+                "aniType": "cry",
+                "nameFull": "cry",
+                "finalFileName": "cry.webp",
+                "packedFileName": "cry.webp",
+                "renderDirName": "cry",
+                "renderFileNamePrefix": "cry-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95
+            }
+        },
+        "clap": {
+            "clap": {
+                "enabled": false,
+                "sourceNames": [
+                    "animations.blend/Clap"
+                ],
+                "probability": 1000,
+                "actionAlterationBlocklists": [
+                    "default"
+                ],
+                "groupName": "clap",
+                "groupAniName": "clap",
+                "aniType": "clap",
+                "nameFull": "clap",
+                "finalFileName": "clap.webp",
+                "packedFileName": "clap.webp",
+                "renderDirName": "clap",
+                "renderFileNamePrefix": "clap-",
+                "preferred": false,
+                "isLoop": false,
+                "avatarRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "renderFileNameExt": ".png",
+                "basePackQualityF": 1.0,
+                "originalFps": 30.0,
+                "targetFps": 15.0,
+                "finalPackQualityF": 0.95
+            }
+        }
+    },
+    "animationOverrides": {}
+}

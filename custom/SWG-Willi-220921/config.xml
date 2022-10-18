@@ -1,0 +1,10 @@
+<config xmlns='http://schema.bluehands.de/character-config' version='1.0'>
+        <param name='name' value='SWG Willi 220921'/>
+        <param name='width' value='200'/>
+        <param name='height' value='200'/>
+        <param name='defaultsequence' value='idle'/>
+        <sequence group="idle" name="idle" type="status" probability="1000" in="standard" out="standard"><animation src="idle.webp" duration="67"/></sequence>
+<sequence group="moveleft" name="moveleft" type="basic" probability="1000" in="moveleft" out="moveleft"><animation src="moveleft.webp" dx="-125" duration="1000"/></sequence>
+<sequence group="moveright" name="moveright" type="basic" probability="1000" in="moveright" out="moveright"><animation src="moveright.webp" dx="125" duration="1000"/></sequence>
+<sequence group="wave" name="wave" type="emote" probability="1000" in="standard" out="standard"><animation src="wave.webp" duration="3200"/></sequence>
+    </config>
