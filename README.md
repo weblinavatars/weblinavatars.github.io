@@ -15,7 +15,7 @@
 -  je Animation bis zu 500 kB
 -  idealerweise sind einzelne Animationen < 200 kB und nur ein längeres "Dance" bis 500 kB
 
-## Benötigt werden wenigstens
+## Minimalset
 - Stehen (als Einzelbild)
 - Rechts Laufen + Links Laufen (Links kann eine einfache Spiegelung sein)
 
